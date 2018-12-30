@@ -17,7 +17,7 @@ const IndexPage = () => (
       <OffsetImage />
     </Wrapper>
 
-    <Wrapper half>
+    <Wrapper half center>
       <SignUpForm />
     </Wrapper>
   </Layout>

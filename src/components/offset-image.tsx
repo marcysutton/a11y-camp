@@ -17,11 +17,11 @@ const ImageWrapper = styled.figure`
   position: relative;
   display: block;
   max-width: 480px;
-  background: ${props => props.theme.secondary};
+  background: ${props => props.theme.primary};
 
   &::before {
     content: "";
-    background: ${props => props.theme.secondary};
+    background: ${props => props.theme.primary};
     position: absolute;
     bottom: -16px;
     right: -16px;

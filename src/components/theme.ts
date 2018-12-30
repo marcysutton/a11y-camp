@@ -1,11 +1,5 @@
 import { DefaultTheme } from 'styled-components';
 
-export const theme: DefaultTheme = {
-  primary: '#18133F',
-  secondary: '#00A5BD'
-}
-
-
 export const rainbow = {
   "red": "#D04B36",
   "orange": "#E36511",
@@ -14,3 +8,11 @@ export const rainbow = {
   "blue": "#147AAB",
   "indigo": "#675997"
 }
+
+export const theme: DefaultTheme = {
+  primary: rainbow.red,
+  secondary: '#00A5BD',
+  text: "#484848"
+}
+
+
