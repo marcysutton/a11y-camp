@@ -2,11 +2,16 @@ import * as React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import { StaticQuery, graphql } from "gatsby";
 import "./layout.css";
-import { theme } from "./theme";
+import { rainbowColors, themeGenerator } from "./theme";
 import { Footer } from "./footer";
+import ThemeController from "./theme-controller";
 
 interface ILayoutProps {
   children: React.ReactNode;
+}
+
+interface ILayoutState {
+  currentColor: string;
 }
 
 interface ISharedData {
@@ -14,7 +19,7 @@ interface ISharedData {
   title: string;
 }
 
-export const SharedData = React.createContext({} as ISharedData)
+export const SharedData = React.createContext({} as ISharedData);
 
 const GlobalStyles = createGlobalStyle`
   html {
@@ -41,25 +46,36 @@ const query = graphql`
   }
 `;
 
-const Layout: React.SFC<ILayoutProps> = props => {
-  return (
-    <StaticQuery query={query}>
-      {data => (
-        <ThemeProvider theme={theme}>
-        <SharedData.Provider value={{
-          title: data.site.siteMetadata.title,
-          eventDate: data.site.siteMetadata.date
-        }}>
-          <LayoutContainer>
-            <GlobalStyles />
-            <main role="main">{props.children}</main>
-            <Footer />
-          </LayoutContainer>
-          </SharedData.Provider>
-        </ThemeProvider>
-      )}
-    </StaticQuery>
-  );
-};
+export default class Layout extends React.Component<ILayoutProps, ILayoutState> {
+  state = {
+    currentColor: rainbowColors.red
+  };
 
-export default Layout;
+  private updateColor = (color: string): void => {
+    this.setState({ currentColor: color });
+  };
+
+  public render(): JSX.Element {
+    const theme = themeGenerator(this.state.currentColor);
+    return (
+      <StaticQuery query={query}>
+        {data => (
+          <ThemeProvider theme={theme}>
+            <SharedData.Provider
+              value={{
+                title: data.site.siteMetadata.title,
+                eventDate: data.site.siteMetadata.date
+              }}>
+              <LayoutContainer>
+                <ThemeController updateColor={this.updateColor} />
+                <GlobalStyles />
+                <main role="main">{this.props.children}</main>
+                <Footer />
+              </LayoutContainer>
+            </SharedData.Provider>
+          </ThemeProvider>
+        )}
+      </StaticQuery>
+    );
+  }
+}
