@@ -6,10 +6,10 @@ import { SignUpForm } from "../components/signup-form";
 import { OffsetImage } from "../components/offset-image";
 import { Tagline } from "../components/tagline";
 import { Section } from "../components/section";
+import { P } from "../components/headlines";
 import { Bucket, BucketContainer } from "../components/bucket";
 import Wrapper from "../components/wrapper";
 import { VoteIcon } from "../components/icons";
-// import VoteIcon from "react-material-icon-svg/dist/VoteIcon";
 
 const StyledWrapper = styled(Wrapper)`
   margin-bottom: 40px;
@@ -39,19 +39,19 @@ const IndexPage = () => (
       <Section title="Event Info">
         <BucketContainer>
           <Bucket title="Unconference" icon={VoteIcon}>
-            <p>
+            <P>
               An unconference is a participant-driven meeting. The term
               "unconference" has been applied, or self-applied, to a wide range of
               gatherings that try to avoid one or more aspects of a conventional
               conference, such as fees, sponsored presentations, and top-down
               organization.
-            </p>
+            </P>
           </Bucket>
-          <Bucket title="Something">
-            <p>Hello</p>
+          <Bucket title="Something" icon={VoteIcon}>
+            <P>Hello</P>
           </Bucket>
-          <Bucket title="Something">
-            <p>Hello</p>
+          <Bucket title="Something" icon={VoteIcon}>
+            <P>Hello</P>
           </Bucket>
         </BucketContainer>
       </Section>
