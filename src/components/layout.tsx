@@ -5,6 +5,7 @@ import "./layout.css";
 import { rainbowColors, themeGenerator } from "./theme";
 import { Footer } from "./footer";
 import ThemeController from "./theme-controller";
+import Wrapper from "./wrapper";
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -48,7 +49,7 @@ const query = graphql`
 
 export default class Layout extends React.Component<ILayoutProps, ILayoutState> {
   state = {
-    currentColor: rainbowColors.red
+    currentColor: rainbowColors.blue
   };
 
   private updateColor = (color: string): void => {
@@ -67,10 +68,12 @@ export default class Layout extends React.Component<ILayoutProps, ILayoutState> 
                 eventDate: data.site.siteMetadata.date
               }}>
               <LayoutContainer>
-                <ThemeController updateColor={this.updateColor} />
                 <GlobalStyles />
                 <main role="main">{this.props.children}</main>
                 <Footer />
+                <Wrapper center half>
+                  <ThemeController updateColor={this.updateColor} />
+                </Wrapper>
               </LayoutContainer>
             </SharedData.Provider>
           </ThemeProvider>

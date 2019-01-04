@@ -24,6 +24,7 @@ const ButtonContainer = styled.div`
 const Tray = styled.div`
   display: flex;
   max-width: 300px;
+  margin: 32px auto;
 `;
 
 const ThemeController: React.SFC<{
