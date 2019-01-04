@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "seattle-a11y-camp",
+  "alias": ["seattle-a11y-camp.now.sh"],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "public" }
+    }
+  ]
+}
