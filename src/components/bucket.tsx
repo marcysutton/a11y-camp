@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import hexToRgba from "hex-to-rgba";
 
 export const BucketContainer = styled.div`
@@ -22,14 +22,24 @@ export const Bucketite = styled.div`
   }
 `;
 
-const BucketIconWrapper = styled.div`
-  background: ${props => hexToRgba(props.theme.primary, 0.125)};
+export const BucketIconWrapper = styled.div<{
+  background?: boolean;
+  center?: boolean;
+}>`
+  background: ${props => props.background && hexToRgba(props.theme.primary, 0.125)};
   width: 48px;
   height: 48px;
   border-radius: 50%;
   text-align: center;
   padding: 12px 0;
   margin-bottom: 16px;
+
+  ${props =>
+    props.center &&
+    css`
+      margin-left: auto;
+      margin-right: auto;
+    `}
 `;
 
 export const Bucket: React.SFC<{
@@ -38,7 +48,7 @@ export const Bucket: React.SFC<{
 }> = props => (
   <Bucketite>
     {props.icon && (
-      <BucketIconWrapper>
+      <BucketIconWrapper background>
         <props.icon />
       </BucketIconWrapper>
     )}

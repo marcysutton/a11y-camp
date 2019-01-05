@@ -8,7 +8,7 @@ const SectionContainer = styled.section`
 
 export const Section: React.SFC<{ title: string }> = props => (
   <SectionContainer>
-    <H3>{props.title}</H3>
+    <H3 style={{ textAlign: "center" }}>{props.title}</H3>
     {props.children}
   </SectionContainer>
 );
