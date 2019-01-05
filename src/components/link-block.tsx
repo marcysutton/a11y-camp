@@ -5,7 +5,7 @@ export const LinkBlock = styled.a`
   color: white;
   display: inline-block;
   font-weight: 700;
-  font-size: 16px;
-  padding: 8px 24px;
+  font-size: 18px;
+  padding: 12px 36px;
   border-radius: 4px;
 `;

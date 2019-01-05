@@ -14,7 +14,6 @@ const ButtonColor = styled.button<{ color: string }>`
 `;
 
 const ButtonContainer = styled.div`
-  text-align: center;
   margin: 0 8px;
   width: calc(100% / 6);
   flex: 1;
@@ -23,8 +22,12 @@ const ButtonContainer = styled.div`
 
 const Tray = styled.div`
   display: flex;
+`;
+
+const Container = styled.div`
   max-width: 300px;
   margin: 32px auto;
+  text-align: center;
 `;
 
 const ThemeController: React.SFC<{
@@ -37,18 +40,19 @@ const ThemeController: React.SFC<{
     };
   });
   return (
-    <Tray>
-      {rainbowx.map((color, index) => (
-        <ButtonContainer key={index}>
-          <ButtonColor
-            color={color.value}
-            onClick={() => updateColor(color.value)}
-          />
-
-          {color.name}
-        </ButtonContainer>
-      ))}
-    </Tray>
+    <Container>
+      <Tray>
+        {rainbowx.map((color, index) => (
+          <ButtonContainer key={index}>
+            <ButtonColor
+              color={color.value}
+              onClick={() => updateColor(color.name)}
+            />
+          </ButtonContainer>
+        ))}
+      </Tray>{" "}
+      <span>Change the Theme</span>
+    </Container>
   );
 };
 

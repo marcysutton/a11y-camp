@@ -2,7 +2,7 @@ import * as React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import { StaticQuery, graphql } from "gatsby";
 import "./layout.css";
-import { rainbowColors, themeGenerator } from "./theme";
+import { themeGenerator } from "./theme";
 import { Footer } from "./footer";
 import ThemeController from "./theme-controller";
 import Wrapper from "./wrapper";
@@ -24,7 +24,7 @@ export const SharedData = React.createContext({} as ISharedData);
 
 const GlobalStyles = createGlobalStyle`
   html {
-    background: #FAFAFA;
+    background: ${props => props.theme.background};
     color: ${props => props.theme.text};
   }
 
@@ -49,7 +49,7 @@ const query = graphql`
 
 export default class Layout extends React.Component<ILayoutProps, ILayoutState> {
   state = {
-    currentColor: rainbowColors.blue
+    currentColor: "blue"
   };
 
   private updateColor = (color: string): void => {
@@ -67,13 +67,13 @@ export default class Layout extends React.Component<ILayoutProps, ILayoutState> 
                 title: data.site.siteMetadata.title,
                 eventDate: data.site.siteMetadata.date
               }}>
+              <Wrapper center half>
+                <ThemeController updateColor={this.updateColor} />
+              </Wrapper>
               <LayoutContainer>
                 <GlobalStyles />
                 <main role="main">{this.props.children}</main>
                 <Footer />
-                <Wrapper center half>
-                  <ThemeController updateColor={this.updateColor} />
-                </Wrapper>
               </LayoutContainer>
             </SharedData.Provider>
           </ThemeProvider>
