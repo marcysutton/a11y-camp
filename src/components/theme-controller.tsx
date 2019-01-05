@@ -43,14 +43,17 @@ const ThemeController: React.SFC<{
     <Container>
       <Tray>
         {rainbowx.map((color, index) => (
-          <ButtonContainer key={index}>
+          <ButtonContainer
+            key={index}
+            aria-label="Change the Theme Color of the Page">
             <ButtonColor
+              aria-label={color.name}
               color={color.value}
               onClick={() => updateColor(color.name)}
             />
           </ButtonContainer>
         ))}
-      </Tray>{" "}
+      </Tray>
       <span>Change the Theme</span>
     </Container>
   );
