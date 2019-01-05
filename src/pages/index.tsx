@@ -55,7 +55,7 @@ const IndexPage = () => (
           </Bucket>
         </BucketContainer>
       </Section>
-      <Section title="Event Info">Hello</Section>
+      <SponsorMap sponsors={SPONSOR_COLLECTION} />
     </Wrapper>
   </Layout>
 );
