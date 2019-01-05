@@ -48,13 +48,27 @@ const query = graphql`
 `;
 
 export default class Layout extends React.Component<ILayoutProps, ILayoutState> {
-  state = {
+  public readonly state: ILayoutState = {
     currentColor: "blue"
   };
 
   private updateColor = (color: string): void => {
     this.setState({ currentColor: color });
   };
+
+  public componentDidMount(): void {
+    const color: string = localStorage.getItem("LOCAL_THEME_COLOR");
+
+    if (color) {
+      this.updateColor(color);
+    }
+  }
+
+  public componentDidUpdate(prevProps: ILayoutProps, prevState: ILayoutState): void {
+    if (this.state.currentColor !== prevState.currentColor) {
+      localStorage.setItem("LOCAL_THEME_COLOR", this.state.currentColor);
+    }
+  }
 
   public render(): JSX.Element {
     const theme = themeGenerator(this.state.currentColor);

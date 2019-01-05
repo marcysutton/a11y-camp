@@ -11,6 +11,7 @@ const ButtonColor = styled.button<{ color: string }>`
   display: block;
   border: 0;
   appearance: none;
+  cursor: pointer;
 `;
 
 const ButtonContainer = styled.div`

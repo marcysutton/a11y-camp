@@ -14,7 +14,7 @@ const ListItem = styled.li`
   margin: 16px 8px;
 `;
 
-export const Footer = () => (
+export const Footer: React.SFC<{}> = () => (
   <StyledFooter>
     <List>
       <ListItem>
@@ -28,10 +28,11 @@ export const Footer = () => (
       Produced by <a href="http://meetup.com/a11ysea">A11ySea</a>,{" "}
       <a href="https://twitter.com/marcysutton">Marcy Sutton</a> and{" "}
       <a href="https://twitter.com/devonpersing">Devon Persing</a>.<br />
-      Artwork by <a href="http://cordeliadillon.com/">Cordelia McGee-Tubb</a>.
+      Octopus Artwork by <a href="http://cordeliadillon.com/">Cordelia McGee-Tubb</a>
+      .
     </p>
     <small>
-      © 2018, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
+      © 2019, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
     </small>
   </StyledFooter>
 );
