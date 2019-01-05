@@ -64,6 +64,11 @@ export const SponsorMap: React.SFC<{ sponsors: ISponsorCollection[] }> = props =
           );
         })}
       </SponsorList>
+      <>
+        <a href="mailto:info@accessibilitycampseattle.org">
+          info@accessibilitycampseattle.org
+        </a>
+      </>
     </Section>
   );
 };
