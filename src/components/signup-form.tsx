@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { Formik, Form, Field, FormikProps, FormikActions } from "formik";
 // import addToMailchimp from "gatsby-plugin-mailchimp";
+import { updatedColors } from "./theme";
 
 const CenteredText = styled.small`
   opacity: 0.75;
@@ -37,7 +38,11 @@ const StyledLabel = styled.label`
 const FormButton = styled.button.attrs({ type: "submit" })`
   appearance: none;
   background: ${props => props.theme.primary};
-  color: white;
+  color: ${props =>
+    props.theme.primary === updatedColors.yellow.primary
+      ? props.theme.text
+      : "white"};
+
   border: 0;
   border-radius: 0 8px 8px 0;
   padding: 8px;

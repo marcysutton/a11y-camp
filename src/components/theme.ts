@@ -9,7 +9,7 @@ interface IColor {
   secondary: string;
 }
 
-const updatedColors: StringTMap<IColor> = {
+export const updatedColors: StringTMap<IColor> = {
   red: { primary: "#D04B36", secondary: "#00A5BD" },
   orange: { primary: "#E36511", secondary: "" },
   yellow: { primary: "#FFBA00", secondary: "" },
