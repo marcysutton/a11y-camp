@@ -6,8 +6,11 @@ const SectionContainer = styled.section`
   margin-bottom: 24px;
 `;
 
-export const Section: React.SFC<{ title: string }> = props => (
-  <SectionContainer>
+export const Section: React.SFC<{
+  title: string;
+  style?: React.CSSProperties;
+}> = props => (
+  <SectionContainer style={props.style}>
     <H3 style={{ textAlign: "center" }}>{props.title}</H3>
     {props.children}
   </SectionContainer>
