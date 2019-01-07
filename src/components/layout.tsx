@@ -7,6 +7,10 @@ import { Footer } from "./footer";
 import ThemeController from "./theme-controller";
 import Wrapper from "./wrapper";
 
+// if (process.env.NODE_ENV === "development") {
+//   require("pesticide/css/pesticide.min.css");
+// }
+
 interface ILayoutProps {
   children: React.ReactNode;
 }

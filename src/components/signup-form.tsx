@@ -52,11 +52,17 @@ const FormButton = styled.button.attrs({ type: "submit" })`
 const FormContainer = styled.section`
   background: #f5f5f5;
   max-width: 572px;
-  margin: 0 auto;
-  padding: 32px 64px;
+  padding: 32px 8px;
+  margin: 8px;
+
   color: ${props => props.theme.text};
   box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08),
     0 1px 3px 1px rgba(60, 64, 67, 0.16);
+
+  @media (min-width: 480px) {
+    margin: 0 auto;
+    padding: 32px 64px;
+  }
 `;
 
 interface IFields {
@@ -74,12 +80,19 @@ export class SignUpForm extends React.Component<{}, {}> {
       <Formik initialValues={{ email: "" }} onSubmit={this.onSubmit}>
         {({ isSubmitting }: FormikProps<IFields>) => (
           <FormContainer>
-            <h3 id="signUp" style={{ fontWeight: 900 }}>Sign up for Updates</h3>
+            <h3 id="signUp" style={{ fontWeight: 900 }}>
+              Sign up for Updates
+            </h3>
 
             <StyledForm>
               <div style={{ flex: 1 }}>
                 <StyledLabel htmlFor="email">Email</StyledLabel>
-                <StyledField aria-labelledby="signUp" id="email" name="email" type="email" />
+                <StyledField
+                  aria-labelledby="signUp"
+                  id="email"
+                  name="email"
+                  type="email"
+                />
               </div>
               <FormButton disabled={isSubmitting}>Notify Me!</FormButton>
             </StyledForm>

@@ -4,10 +4,14 @@ import hexToRgba from "hex-to-rgba";
 
 export const BucketContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
 `;
+
 export const BucketTitle = styled.h4``;
 export const Bucketite = styled.div`
-  width: calc(100% / 3);
+  width: 100%;
+  flex: 1;
+  max-width: calc(100% / 3);
   & + & {
     margin-left: 16px;
     margin-right: 16px;

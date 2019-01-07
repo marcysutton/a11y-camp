@@ -8735,6 +8735,11 @@ performance-now@^2.1.0:
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
   integrity sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns=
 
+pesticide@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/pesticide/-/pesticide-1.3.1.tgz#a978c8d8cd6b34de07019206afd2b368a70920db"
+  integrity sha1-qXjI2M1rNN4HAZIGr9KzaKcJINs=
+
 phin@^2.9.1:
   version "2.9.3"
   resolved "https://registry.yarnpkg.com/phin/-/phin-2.9.3.tgz#f9b6ac10a035636fb65dfc576aaaa17b8743125c"
