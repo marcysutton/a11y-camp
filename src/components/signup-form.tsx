@@ -52,7 +52,7 @@ const FormButton = styled.button.attrs({ type: "submit" })`
 const FormContainer = styled.section`
   background: #f5f5f5;
   max-width: 572px;
-  padding: 32px 8px;
+  padding: 16px;
   margin: 8px;
 
   color: ${props => props.theme.text};

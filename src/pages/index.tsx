@@ -26,6 +26,13 @@ const StyledTagline = styled(Tagline)`
   flex: 1;
 `;
 
+const SignUpFormContainer = styled(Wrapper)`
+  padding: 0;
+  @media screen and (min-width: 480px) {
+    padding: 64px 0;
+  }
+`;
+
 const StyledOffsetImage = styled(OffsetImage)`
   transform: scale(0.875);
   @media screen and (min-width: 480px) {
@@ -54,9 +61,9 @@ const IndexPage = () => (
       <StyledTagline />
     </Hero>
 
-    <StyledWrapper center style={{ paddingTop: 64, paddingBottom: 64 }}>
+    <SignUpFormContainer center>
       <SignUpForm />
-    </StyledWrapper>
+    </SignUpFormContainer>
     <StyledWrapper center>
       <BlockQuote>
         <BucketIconWrapper background center>

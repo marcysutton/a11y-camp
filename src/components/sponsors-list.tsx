@@ -36,11 +36,13 @@ const SponsorList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
 `;
+
 const SponsorItem = styled.li`
   margin-bottom: 16px;
-  max-width: 200px;
+  max-width: 140px;
+
   width: 100%;
   display: inline-block;
 
@@ -50,6 +52,10 @@ const SponsorItem = styled.li`
     max-width: 80%;
     max-height: 90px;
     width: auto;
+  }
+
+  @media (min-width: 480px) {
+    max-width: 200px;
   }
 `;
 
