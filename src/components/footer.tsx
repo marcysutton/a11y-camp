@@ -1,8 +1,10 @@
 import * as React from "react";
 import styled from "styled-components";
+import { P } from "./headlines";
 
 const StyledFooter = styled.footer`
   text-align: center;
+  margin-bottom: 64px;
 `;
 
 const List = styled.ul`
@@ -24,13 +26,15 @@ export const Footer: React.SFC<{}> = () => (
         <a href="/code-of-conduct/">Code of Conduct</a>
       </ListItem>
     </List>
-    <p>
+    <P>
       Produced by <a href="http://meetup.com/a11ysea">A11ySea</a>,{" "}
       <a href="https://twitter.com/marcysutton">Marcy Sutton</a> and{" "}
-      <a href="https://twitter.com/devonpersing">Devon Persing</a>.<br />
+      <a href="https://twitter.com/devonpersing">Devon Persing</a>.
+    </P>
+    <P>
       Octopus Artwork by <a href="http://cordeliadillon.com/">Cordelia McGee-Tubb</a>
       .
-    </p>
+    </P>
     <small>
       © 2019, Built with <a href="https://www.gatsbyjs.org">Gatsby</a>
     </small>
