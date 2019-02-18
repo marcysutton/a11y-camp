@@ -6,7 +6,7 @@ interface ILogoVector {
   theme: DefaultTheme;
 }
 
-export const OctoLogo: React.SFC<ILogoVector> = props => {
+export const OctoLogo: React.FC<ILogoVector> = props => {
   console.log(props);
   return (
     <svg

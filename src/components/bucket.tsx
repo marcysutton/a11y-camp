@@ -42,10 +42,12 @@ export const BucketIconWrapper = styled.div<{
     `}
 `;
 
-export const Bucket: React.SFC<{
+interface BucketProps {
   title: string;
   icon?: React.ComponentType<any>;
-}> = props => (
+}
+
+export const Bucket: React.FC<BucketProps> = props => (
   <Bucketite>
     {props.icon && (
       <BucketIconWrapper background>

@@ -6,7 +6,7 @@ const SectionContainer = styled.section`
   margin-bottom: 24px;
 `;
 
-export const Section: React.SFC<{
+export const Section: React.FC<{
   title: string;
   style?: React.CSSProperties;
 }> = props => (

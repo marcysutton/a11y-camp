@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
   text-align: center;
 `;
 
-const Header: React.SFC<IHeaderProps> = props => {
+const Header: React.FC<IHeaderProps> = props => {
   return (
     <StyledHeader>
       <Wrapper
