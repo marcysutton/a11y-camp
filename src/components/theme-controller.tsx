@@ -24,7 +24,7 @@ const Tray = styled.div`
   display: flex;
 `;
 
-const Container = styled.div`
+const Container = styled.nav`
   max-width: 300px;
   margin: 32px auto;
   text-align: center;
@@ -40,7 +40,7 @@ const ThemeController: React.SFC<{
     };
   });
   return (
-    <Container>
+    <Container aria-label="Site color picker">
       <Tray>
         {rainbowx.map((color, index) => (
           <ButtonContainer key={index}>

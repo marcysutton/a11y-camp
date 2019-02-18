@@ -42,7 +42,7 @@ export const OffsetImage = () => {
   return (
     <ImageWrapper>
       <Frame className="Frame">
-        <SaturatedImage src="/images/event.jpg" />
+        <SaturatedImage src="/images/event.jpg" alt="" />
       </Frame>
     </ImageWrapper>
   );
