@@ -1,8 +1,12 @@
 import styled from "styled-components";
+import { updatedColors } from "./theme";
 
 export const LinkBlock = styled.a`
   background: ${props => props.theme.primary};
-  color: white;
+  color: ${props =>
+    props.theme.primary === updatedColors.yellow.primary
+      ? props.theme.text
+      : "white"};
   display: inline-block;
   font-weight: 700;
   font-size: 18px;

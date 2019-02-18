@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { Section } from "./section";
+import { P } from "./headlines";
 
 interface ISponsorCollection {
   src: string;
@@ -54,7 +55,7 @@ const SponsorItem = styled.li`
 
 export const SponsorMap: React.SFC<{ sponsors: ISponsorCollection[] }> = props => {
   return (
-    <Section title="Sponsors">
+    <Section title="Sponsors" style={{ textAlign: "center" }}>
       <SponsorList>
         {props.sponsors.map((sponsor: ISponsorCollection, index: number) => {
           return (
@@ -64,11 +65,12 @@ export const SponsorMap: React.SFC<{ sponsors: ISponsorCollection[] }> = props =
           );
         })}
       </SponsorList>
-      <>
+      <P>
+        To become a sponsor, please reach out here:{" "}
         <a href="mailto:info@accessibilitycampseattle.org">
           info@accessibilitycampseattle.org
         </a>
-      </>
+      </P>
     </Section>
   );
 };

@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { Formik, Form, Field, FormikProps, FormikActions } from "formik";
 // import addToMailchimp from "gatsby-plugin-mailchimp";
+import { updatedColors } from "./theme";
 
 const CenteredText = styled.small`
   opacity: 0.75;
@@ -37,7 +38,11 @@ const StyledLabel = styled.label`
 const FormButton = styled.button.attrs({ type: "submit" })`
   appearance: none;
   background: ${props => props.theme.primary};
-  color: white;
+  color: ${props =>
+    props.theme.primary === updatedColors.yellow.primary
+      ? props.theme.text
+      : "white"};
+
   border: 0;
   border-radius: 0 8px 8px 0;
   padding: 8px;
@@ -69,12 +74,12 @@ export class SignUpForm extends React.Component<{}, {}> {
       <Formik initialValues={{ email: "" }} onSubmit={this.onSubmit}>
         {({ isSubmitting }: FormikProps<IFields>) => (
           <FormContainer>
-            <h3 style={{ fontWeight: 900 }}>Sign up for Updates</h3>
+            <h3 id="signUp" style={{ fontWeight: 900 }}>Sign up for Updates</h3>
 
             <StyledForm>
               <div style={{ flex: 1 }}>
                 <StyledLabel htmlFor="email">Email</StyledLabel>
-                <StyledField id="email" name="email" type="email" />
+                <StyledField aria-labelledby="signUp" id="email" name="email" type="email" />
               </div>
               <FormButton disabled={isSubmitting}>Notify Me!</FormButton>
             </StyledForm>

@@ -11,6 +11,7 @@ const ButtonColor = styled.button<{ color: string }>`
   display: block;
   border: 0;
   appearance: none;
+  cursor: pointer;
 `;
 
 const ButtonContainer = styled.div`
@@ -43,15 +44,16 @@ const ThemeController: React.SFC<{
     <Container>
       <Tray>
         {rainbowx.map((color, index) => (
-          <ButtonContainer key={index}>
+          <ButtonContainer key={index} aria-labelledby="theme">
             <ButtonColor
+              aria-label={color.name}
               color={color.value}
               onClick={() => updateColor(color.name)}
             />
           </ButtonContainer>
         ))}
-      </Tray>{" "}
-      <span>Change the Theme</span>
+      </Tray>
+      <span id="theme">Change the Page's Theme</span>
     </Container>
   );
 };
