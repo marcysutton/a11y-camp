@@ -42,7 +42,10 @@ export const OffsetImage: React.SFC<{ className?: string }> = ({ className }) =>
   return (
     <ImageWrapper className={className}>
       <Frame className="Frame">
-        <SaturatedImage src="/images/event.jpg" />
+        <SaturatedImage
+          src="/images/event.jpg"
+          alt="Image of people gathered at an event."
+        />
       </Frame>
     </ImageWrapper>
   );

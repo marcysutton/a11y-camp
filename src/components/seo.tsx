@@ -10,7 +10,7 @@ interface ISEOProps {
   title: string;
 }
 
-const SEO: React.SFC<ISEOProps> = props => {
+const SEO: React.FC<ISEOProps> = props => {
   return (
     <StaticQuery query={detailsQuery}>
       {data => {

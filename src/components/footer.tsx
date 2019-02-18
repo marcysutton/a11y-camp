@@ -16,7 +16,7 @@ const ListItem = styled.li`
   margin: 16px 8px;
 `;
 
-export const Footer: React.SFC<{}> = () => (
+export const Footer: React.FC<{}> = () => (
   <StyledFooter>
     <List>
       <ListItem>

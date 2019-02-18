@@ -80,9 +80,9 @@ export class SignUpForm extends React.Component<{}, {}> {
       <Formik initialValues={{ email: "" }} onSubmit={this.onSubmit}>
         {({ isSubmitting }: FormikProps<IFields>) => (
           <FormContainer>
-            <h3 id="signUp" style={{ fontWeight: 900 }}>
+            <h2 id="signUp" style={{ fontWeight: 900 }}>
               Sign up for Updates
-            </h3>
+            </h2>
 
             <StyledForm>
               <div style={{ flex: 1 }}>

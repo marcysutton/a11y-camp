@@ -59,7 +59,7 @@ const SponsorItem = styled.li`
   }
 `;
 
-export const SponsorMap: React.SFC<{ sponsors: ISponsorCollection[] }> = props => {
+export const SponsorMap: React.FC<{ sponsors: ISponsorCollection[] }> = props => {
   return (
     <Section title="Sponsors" style={{ textAlign: "center" }}>
       <SponsorList>

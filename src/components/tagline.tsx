@@ -28,7 +28,7 @@ const SecondaryData = styled.aside`
   }
 `;
 
-export const Tagline: React.SFC<{ className?: string }> = props => {
+export const Tagline: React.FC<{ className?: string }> = props => {
   return (
     <SharedData.Consumer>
       {context => (
