@@ -7,7 +7,6 @@ interface ILogoVector {
 }
 
 export const OctoLogo: React.FC<ILogoVector> = props => {
-  console.log(props);
   return (
     <svg
       version="1.1"
@@ -16,9 +15,10 @@ export const OctoLogo: React.FC<ILogoVector> = props => {
       y="0px"
       viewBox="0 0 304.5 273"
       // style={{ enableBackground: "new 0 0 304.5 273" }}
-      xmlSpace="preserve">
+      xmlSpace="preserve"
+      focusable="false">
       <style type="text/css">
-        {`.st0{fill:#FFFFFF;}
+        {`.st0{fill:${props.theme.background}}
 	.st1{fill: ${props.theme.primary};}
   .st2{fill: ${props.theme.primary};}
 	.st3{fill: ${props.theme.background};}
