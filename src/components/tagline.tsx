@@ -27,13 +27,12 @@ export const Tagline: React.FC<{ className?: string }> = props => {
 
           <H1>{context.title}</H1>
           <TagPara>
-            A community event to grow in and learn all things a11y while connecting
-            with companies and engineers with the same passion.
+            {context.description}
           </TagPara>
           <Rule />
           <time>{context.eventDate}</time>
-          <address>Seattle Central Library — 1000 4th Ave 98104</address>
-          <LinkBlock href="#">Register</LinkBlock>
+          <address>{context.address}</address>
+          <LinkBlock href={context.registerUrl}>Register</LinkBlock>
         </Container>
       )}
     </SharedData.Consumer>

@@ -18,6 +18,11 @@ interface ILayoutState {
 interface ISharedData {
   eventDate: string;
   title: string;
+  address: string;
+  description: string;
+  email: string;
+  url: string;
+  registerUrl: string;
 }
 
 export const SharedData = React.createContext({} as ISharedData);
@@ -30,7 +35,6 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     color: ${props => props.theme.primary};
-    text-decoration: none;
   }
 `;
 
@@ -41,7 +45,12 @@ const query = graphql`
     site {
       siteMetadata {
         title
+        description
         date
+        address
+        email
+        siteUrl
+        registerUrl
       }
     }
   }
@@ -53,7 +62,9 @@ export default class Layout extends React.Component<ILayoutProps, ILayoutState> 
   };
 
   private updateColor = (color: string): void => {
-    this.setState({ currentColor: color });
+    this.setState({
+      currentColor: color
+    });
   };
 
   public componentDidMount(): void {
@@ -79,7 +90,12 @@ export default class Layout extends React.Component<ILayoutProps, ILayoutState> 
             <SharedData.Provider
               value={{
                 title: data.site.siteMetadata.title,
-                eventDate: data.site.siteMetadata.date
+                eventDate: data.site.siteMetadata.date,
+                address: data.site.siteMetadata.address,
+                email: data.site.siteMetadata.email,
+                url: data.site.siteMetadata.siteUrl,
+                description: data.site.siteMetadata.description,
+                registerUrl: data.site.siteMetadata.registerUrl
               }}>
               <Wrapper center half>
                 <ThemeController updateColor={this.updateColor} />

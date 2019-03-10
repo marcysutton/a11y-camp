@@ -1,9 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: `Accessibility Camp Seattle`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    date: "May 23rd 2019"
+    description: `Join us for a single-day unconference event focused on accessibility in physical and digital spaces.`,
+    date: "Saturday, May 18th 2019",
+    address: "Seattle Central College",
+    email: "info@accessibilitycampseattle.org",
+    siteUrl: "http://accessibilitycampseattle.org",
+    registerUrl: "/register/",
+    author: ""
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,6 +17,32 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`
       }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/src/markdown`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+        ],
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

@@ -60,9 +60,9 @@ const SEO: React.FC<ISEOProps> = props => {
               .concat(
                 props.keywords.length > 0
                   ? {
-                      name: `keywords`,
-                      content: props.keywords.join(`, `)
-                    }
+                    name: `keywords`,
+                    content: props.keywords.join(`, `)
+                  }
                   : []
               )
               .concat(props.meta)}

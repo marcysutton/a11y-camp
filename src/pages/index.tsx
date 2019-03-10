@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -27,7 +28,7 @@ const StyledTagline = styled(Tagline)`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home" keywords={[`a11y`, `a11ycamp`, `seattle`, `a11ysea`]} />
     <StyledWrapper
       center
       style={{
@@ -67,7 +68,7 @@ const IndexPage = () => (
             <P>
               The event will be held at the Seattle Public Library in downtown
               Seattle. Looking for a place to stay or how to get to the venue? We
-              have a whole page devoted to that topic! Visit Travel Information.
+              have a whole page devoted to that topic! Visit <Link to="/travel-info/">Travel Information</Link>.
             </P>
           </Bucket>
           <Bucket title="Food Options" icon={FoodIcon}>
