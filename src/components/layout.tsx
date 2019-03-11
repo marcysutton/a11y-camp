@@ -51,6 +51,7 @@ const query = graphql`
   }
 `;
 
+// TODO: use Hooks
 export default class Layout extends React.Component<ILayoutProps, ILayoutState> {
   public readonly state: ILayoutState = {
     currentColor: "blue"

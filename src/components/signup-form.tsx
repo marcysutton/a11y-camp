@@ -69,6 +69,7 @@ interface IFields {
   email: string;
 }
 
+// TODO: use Hooks
 export class SignUpForm extends React.Component<{}, {}> {
   private onSubmit(values: IFields, actions: FormikActions<IFields>): void {
     console.log(values, actions);
