@@ -4,21 +4,30 @@ import hexToRgba from "hex-to-rgba";
 
 export const BucketContainer = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  margin: 8px;
 `;
+
 export const BucketTitle = styled.h4``;
 export const Bucketite = styled.div`
-  width: calc(100% / 3);
-  & + & {
-    margin-left: 16px;
-    margin-right: 16px;
-  }
+  width: 100%;
+  flex: 1 1 480px;
+  margin-bottom: 32px;
+  @media (min-width: 800px) {
+    max-width: calc(100% / 3 - 16px);
+    flex: 1;
+    & + & {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
 
-  &:first-of-type {
-    margin-right: 16px;
-  }
+    &:first-of-type {
+      margin-right: 16px;
+    }
 
-  &:last-of-type {
-    margin-right: 0;
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
 `;
 

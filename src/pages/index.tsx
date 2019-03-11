@@ -23,28 +23,47 @@ const StyledWrapper = styled(Wrapper)`
 
 const StyledTagline = styled(Tagline)`
   max-width: 480px;
+  flex: 1;
+`;
+
+const SignUpFormContainer = styled(Wrapper)`
+  padding: 0;
+  @media screen and (min-width: 480px) {
+    padding: 64px 0;
+  }
+`;
+
+const StyledOffsetImage = styled(OffsetImage)`
+  transform: scale(0.875);
+  @media screen and (min-width: 480px) {
+    transform: scale(1);
+  }
+`;
+
+const Hero = styled(StyledWrapper)`
+  display: flex;
+  flex-wrap: wrap;
+
+  padding: 16px;
+
+  @media screen and (min-width: 480px) {
+    justify-content: space-between;
+    align-items: center;
+    padding: 64px 0;
+  }
 `;
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <StyledWrapper
-      center
-      style={{
-        paddingTop: 64,
-        paddingBottom: 64,
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}>
+    <Hero center>
+      <StyledOffsetImage />
       <StyledTagline />
+    </Hero>
 
-      <OffsetImage />
-    </StyledWrapper>
-
-    <StyledWrapper center style={{ paddingTop: 64, paddingBottom: 64 }}>
+    <SignUpFormContainer center>
       <SignUpForm />
-    </StyledWrapper>
+    </SignUpFormContainer>
     <StyledWrapper center>
       <BlockQuote>
         <BucketIconWrapper background center>

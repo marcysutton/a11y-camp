@@ -38,9 +38,9 @@ const Frame = styled.div`
 
 // TODO: wrap image in frame
 
-export const OffsetImage = () => {
+export const OffsetImage: React.SFC<{ className?: string }> = ({ className }) => {
   return (
-    <ImageWrapper>
+    <ImageWrapper className={className}>
       <Frame className="Frame">
         <SaturatedImage
           src="/images/event.jpg"

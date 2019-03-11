@@ -29,41 +29,49 @@ export const Rule = styled.hr`
   height: 3px;
   background: ${props => props.theme.primary};
   border: 0;
-  margin: 0 0 32px;
+  margin: 0 auto 32px;
   max-width: 80px;
+
+  @media (min-width: 480px) {
+    margin: 0 0 32px;
+  }
 `;
 
 export const BlockQuote = styled.blockquote`
-  --border: 3px solid ${props => props.theme.primary};
+  --border: 1px solid ${props => props.theme.primary};
   padding: 1rem;
-  margin: 5rem auto;
+  margin: 5rem 8px;
   max-width: 33rem;
   background: ${props => hexToRgba(props.theme.primary, 0.125)};
   position: relative;
   font-family: system-ui, sans-serif;
 
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    height: 50%;
-    width: 50%;
-    user-select: none;
-    z-index: -1;
-    position: absolute;
-  }
+  @media (min-width: 480px) {
+    --border: 3px solid ${props => props.theme.primary};
+    margin: 5rem auto;
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      height: 50%;
+      width: 50%;
+      user-select: none;
+      z-index: -1;
+      position: absolute;
+    }
 
-  &::after {
-    top: -16px;
-    left: -16px;
-    border-left: var(--border);
-    border-top: var(--border);
-  }
+    &::after {
+      top: -16px;
+      left: -16px;
+      border-left: var(--border);
+      border-top: var(--border);
+    }
 
-  &::before {
-    border-right: var(--border);
-    border-bottom: var(--border);
-    bottom: -16px;
-    right: -16px;
+    &::before {
+      border-right: var(--border);
+      border-bottom: var(--border);
+      bottom: -16px;
+      right: -16px;
+    }
   }
 `;

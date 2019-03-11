@@ -52,17 +52,24 @@ const FormButton = styled.button.attrs({ type: "submit" })`
 const FormContainer = styled.section`
   background: #f5f5f5;
   max-width: 572px;
-  margin: 0 auto;
-  padding: 32px 64px;
+  padding: 16px;
+  margin: 8px;
+
   color: ${props => props.theme.text};
   box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08),
     0 1px 3px 1px rgba(60, 64, 67, 0.16);
+
+  @media (min-width: 480px) {
+    margin: 0 auto;
+    padding: 32px 64px;
+  }
 `;
 
 interface IFields {
   email: string;
 }
 
+// TODO: use Hooks
 export class SignUpForm extends React.Component<{}, {}> {
   private onSubmit(values: IFields, actions: FormikActions<IFields>): void {
     console.log(values, actions);
